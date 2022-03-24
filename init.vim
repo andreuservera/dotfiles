@@ -25,10 +25,14 @@ set expandtab
 
 set background=dark 
 
+let mapleader = " " "map leader to Space
+nnoremap <silent> <C-f> :FZF<CR>
+
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'puremourning/vimspector'
 call plug#end()
 
 colorscheme gruvbox
