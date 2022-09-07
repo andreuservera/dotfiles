@@ -1,12 +1,16 @@
 #!/bin/bash
-if [ ! -d "~/.config/" ]
+
+DIR_CONFIG=$HOME/.config
+DIR_NVIM=$DIR_CONFIG/nvim
+
+if [ ! -d "$DIR_CONFIG" ]
 then
     echo "Adding simlinks in .config"
 fi
 
-if [ ! -d "~/.config/nvim/" ]
+if [ ! -d "$DIR_NVIM" ]
 then
-    echo "Creating dir /nvim
+    echo "Creating dir /nvim"
     mkdir ~/.config/nvim
 fi
 
