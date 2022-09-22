@@ -1,0 +1,18 @@
+[user]
+	name = Andreu Servera
+	email = andreumarc12@gmail.com
+
+[includeIf "gitdir:/code/bbva/"]
+    path = .gitconfig-bbva
+
+[core]
+	excludesFile = ~/.gitignore
+	editor = nvim
+[alias]
+	rb = "!f() { git rebase -i $(git merge-base develop HEAD); };f"
+	pl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ol = log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset %C(yellow)%ad%Creset %s'
+	lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	lg = !"git lg1"
+	
